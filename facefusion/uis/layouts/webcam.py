@@ -47,4 +47,4 @@ def listen() -> None:
 
 def run(ui : gradio.Blocks) -> None:
 	concurrency_count = min(2, multiprocessing.cpu_count())
-	ui.queue(concurrency_count = concurrency_count).launch(show_api = False, inbrowser = facefusion.globals.open_browser, server_name='0.0.0.0')
+	ui.queue(concurrency_count = concurrency_count).launch(show_api = True, inbrowser = facefusion.globals.open_browser, server_name='0.0.0.0')
