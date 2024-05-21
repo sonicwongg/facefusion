@@ -1,6 +1,7 @@
 import logging
 import os.path
 import subprocess
+import sys
 import uuid
 
 from flask import Flask, request, make_response, send_file
@@ -24,7 +25,7 @@ def video_swap_face():
 		target_file = request.files["target"]
 		target_file.save(target_file_name)
 
-		commands = ['python3', 'run.py',
+		commands = [sys.executable, 'run.py',
 					'--frame-processors', 'face_swapper',
 					'-s', source_file_name,
 					'-t', target_file_name,
@@ -60,7 +61,7 @@ def image_swap_face():
 		target_file = request.files["target"]
 		target_file.save(target_file_name)
 
-		commands = ['python3', 'run.py',
+		commands = [sys.executable, 'run.py',
 					'--frame-processors', 'face_swapper',
 					'-s', source_file_name,
 					'-t', target_file_name,
