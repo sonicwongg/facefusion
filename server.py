@@ -38,12 +38,12 @@ def video_swap_face():
 			}, 500)
 		return send_file(result_file_name, mimetype='video/mp4')
 	finally:
-		if os.path.exists(source_file_name):
-			os.remove(source_file_name)
-		if os.path.exists(target_file_name):
-			os.remove(target_file_name)
-		if os.path.exists(result_file_name):
-			os.remove(result_file_name)
+		# if os.path.exists(source_file_name):
+		# 	os.remove(source_file_name)
+		# if os.path.exists(target_file_name):
+		# 	os.remove(target_file_name)
+		# if os.path.exists(result_file_name):
+		# 	os.remove(result_file_name)
 		logging.info("remove all")
 
 
@@ -74,12 +74,12 @@ def image_swap_face():
 			}, 500)
 		return send_file(result_file_name, mimetype='image/jpg')
 	finally:
-		if os.path.exists(source_file_name):
-			os.remove(source_file_name)
-		if os.path.exists(target_file_name):
-			os.remove(target_file_name)
-		if os.path.exists(result_file_name):
-			os.remove(result_file_name)
+		# if os.path.exists(source_file_name):
+		# 	os.remove(source_file_name)
+		# if os.path.exists(target_file_name):
+		# 	os.remove(target_file_name)
+		# if os.path.exists(result_file_name):
+		# 	os.remove(result_file_name)
 		logging.info("remove all")
 
 
