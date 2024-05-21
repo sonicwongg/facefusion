@@ -44,6 +44,7 @@ def video_swap_face():
 			os.remove(target_file_name)
 		if os.path.exists(result_file_name):
 			os.remove(result_file_name)
+		logging.info("remove all")
 
 
 @app.route("/image/swap-face", methods=["POST"])
@@ -79,6 +80,7 @@ def image_swap_face():
 			os.remove(target_file_name)
 		if os.path.exists(result_file_name):
 			os.remove(result_file_name)
+		logging.info("remove all")
 
 
 @app.route("/health", methods=["GET"])
