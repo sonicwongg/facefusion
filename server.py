@@ -26,9 +26,9 @@ def video_swap_face():
 
 		commands = [sys.executable, 'run.py',
 					'--frame-processors', 'face_swapper',
-					'-s', source_file_name,
-					'-t', target_file_name,
-					'-o', result_file_name,
+					'-s', f".{source_file_name}",
+					'-t', f".{target_file_name}",
+					'-o', f".{result_file_name}",
 					'--headless']
 		run = subprocess.run(commands, stdout=subprocess.STDOUT, stderr=subprocess.STDOUT)
 		logging.info(f"output: {run.stdout.decode()}")
@@ -63,9 +63,9 @@ def image_swap_face():
 
 		commands = [sys.executable, 'run.py',
 					'--frame-processors', 'face_swapper',
-					'-s', source_file_name,
-					'-t', target_file_name,
-					'-o', result_file_name,
+					'-s', f".{source_file_name}",
+					'-t', f".{target_file_name}",
+					'-o', f".{result_file_name}",
 					'--headless']
 		run = subprocess.run(commands, stdout=subprocess.STDOUT, stderr=subprocess.STDOUT)
 		logging.info(f"output: {run.stdout.decode()}")
