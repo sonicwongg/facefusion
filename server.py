@@ -1,5 +1,4 @@
 import logging
-import os.path
 import subprocess
 import sys
 import uuid
@@ -31,7 +30,8 @@ def video_swap_face():
 					'-t', target_file_name,
 					'-o', result_file_name,
 					'--headless']
-		run = subprocess.run(commands, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+		run = subprocess.run(commands, stdout=subprocess.STDOUT, stderr=subprocess.STDOUT)
+		logging.info(f"output: {run.stdout.decode()}")
 		if run.returncode != 0:
 			return make_response({
 				'succeed': False,
@@ -67,7 +67,8 @@ def image_swap_face():
 					'-t', target_file_name,
 					'-o', result_file_name,
 					'--headless']
-		run = subprocess.run(commands, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+		run = subprocess.run(commands, stdout=subprocess.STDOUT, stderr=subprocess.STDOUT)
+		logging.info(f"output: {run.stdout.decode()}")
 		if run.returncode != 0:
 			return make_response({
 				'succeed': False,
