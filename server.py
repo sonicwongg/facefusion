@@ -29,7 +29,8 @@ def video_swap_face():
 					'-s', f"./{source_file_name}",
 					'-t', f"./{target_file_name}",
 					'-o', f"./{result_file_name}",
-					'--headless']
+					'--headless',
+					'--execution-providers=cuda']
 		run = subprocess.run(commands, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 		logging.info(f"output: {run.stdout.decode()}")
 		if run.returncode != 0:
@@ -66,7 +67,8 @@ def image_swap_face():
 					'-s', f"./{source_file_name}",
 					'-t', f"./{target_file_name}",
 					'-o', f"./{result_file_name}",
-					'--headless']
+					'--headless',
+					'--execution-providers=cuda']
 		run = subprocess.run(commands, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 		logging.info(f"output: {run.stdout.decode()}")
 		if run.returncode != 0:
