@@ -3,7 +3,7 @@ services:
         build:
             context: .
             dockerfile: Dockerfile.cuda
-        command: [ 'python', 'run.py', '--execution-providers', 'cuda' ]
+        command: [ 'python', 'server.py' ]
         volumes:
             - .assets:/facefusion/.assets
         ports:
